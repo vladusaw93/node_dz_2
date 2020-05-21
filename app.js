@@ -36,7 +36,7 @@ app.post('/log', (req, res) => {
 
     if (userIndex > -1) {
         res.write(`You is singing in`)
-    } else {
+    }else {
         res.write(`sing up pls`);
     }
     res.end()
