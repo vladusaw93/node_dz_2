@@ -29,15 +29,15 @@ app.get(`/`, (req, res) => {
 //#######################################################
 app.post('/log', (req, res) => {
     const {login, password} = req.body;
-    allusers.find(user => {
+    const userIndex = allusers.findIndex(user => {
         status = user.email == login && user.password == password;
         return status;
     });
-    if (status) {
+
+    if (userIndex > -1) {
         res.write(`You is singing in`)
     } else {
         res.write(`sing up pls`);
-        allusers.push()
     }
     res.end()
 })
